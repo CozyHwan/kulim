@@ -1,7 +1,0 @@
-{
-  "start-app": {
-    "name": "Run Dev Server",
-    "command": "yarn run start",
-    "runAtStart": true
-  }
-}
