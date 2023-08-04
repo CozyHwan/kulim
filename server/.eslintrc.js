@@ -17,6 +17,16 @@ module.exports = {
         alwaysTryTypes: true,
       },
     },
+    jest: {
+      globalAliases: {
+        describe: ['context'],
+        fdescribe: ['fcontext'],
+        xdescribe: ['xcontext'],
+      },
+    },
+  },
+  globals: {
+    context: 'readonly',
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -26,6 +36,7 @@ module.exports = {
   plugins: [
     '@typescript-eslint',
     'import',
+    'jest',
   ],
   ignorePatterns: ['dist', 'scripts'],
   rules: {
