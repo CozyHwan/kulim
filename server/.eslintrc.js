@@ -6,16 +6,19 @@ module.exports = {
   extends: [
     'airbnb-base',
     'plugin:import/recommended',
-    'plugin:import/typescript',
   ],
   settings: {
+    'import/resolver': {
+      node: {
+        extensions: [
+          '.js',
+          '.jsx',
+        ],
+        paths: ['src'],
+      },
+    },
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts'],
-    },
-    'import/resolver': {
-      typescript: {
-        alwaysTryTypes: true,
-      },
     },
     jest: {
       globalAliases: {
@@ -40,7 +43,6 @@ module.exports = {
   ],
   ignorePatterns: ['dist', 'scripts'],
   rules: {
-    'import/no-unresolved': 'error',
     'import/extensions': ['error', 'ignorePackages', {
       js: 'never',
       jsx: 'never',
@@ -58,5 +60,14 @@ module.exports = {
       },
     ],
     'import/no-duplicates': 'error',
+    'import/no-useless-constructor': 'off',
+    'import/prefer-default-export': 'off',
+    'no-useless-constructor': 'off',
+    'no-unused-vars': 'off',
+    'import/no-unresolved': 'off',
+    'no-empty-function': 'off',
+    'no-undef': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'class-methods-use-this': 'off',
   },
 };
